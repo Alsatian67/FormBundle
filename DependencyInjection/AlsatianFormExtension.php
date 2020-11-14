@@ -5,9 +5,8 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\Exception\LogicException;
 use Symfony\Component\DependencyInjection\Loader;
-
-use Symfony\Component\DependencyInjection\Reference;
 
 class AlsatianFormExtension extends Extension
 {
@@ -29,6 +28,14 @@ class AlsatianFormExtension extends Extension
         }
         
         if($configFormBundle['extensible_entity']['enabled']){
+            if (!class_exists('Symfony\Bridge\Doctrine\Form\Type\EntityType')) {
+                throw new LogicException('ExtensibleEntity type cannot be enabled as the symfony/doctrine-bridge is not installed. Try running "composer require symfony/doctrine-bridge".');
+            }
+            
+            if (!class_exists('Symfony\Component\Serializer\Serializer')) {
+                throw new LogicException('ExtensibleEntity type cannot be enabled as the Serializer component is not installed. Try running "composer require symfony/serializer".');
+            }
+            
             $definition = $container->getDefinition('alsatian_form.form_type.extensible_entity');
             $definition->setPublic(true);
             $definition->addTag('form.type');
@@ -37,6 +44,14 @@ class AlsatianFormExtension extends Extension
         }
         
         if($configFormBundle['extensible_document']['enabled']){
+            if (!class_exists('Doctrine\Bundle\MongoDBBundle\Form\Type\DocumentType')) {
+                throw new LogicException('ExtensibleDocument type cannot be enabled as the doctrine/mongodb-odm-bundle is not installed. Try running "composer require doctrine/mongodb-odm-bundle.');
+            }
+            
+            if (!class_exists('Symfony\Component\Serializer\Serializer')) {
+                throw new LogicException('ExtensibleDocument type cannot be enabled as the Serializer component is not installed. Try running "composer require symfony/serializer".');
+            }
+            
             $definition = $container->getDefinition('alsatian_form.form_type.extensible_document');
             $definition->setPublic(true);
             $definition->addTag('form.type');
@@ -70,6 +85,14 @@ class AlsatianFormExtension extends Extension
         $container->setParameter('alsatian_form.parameters.datetime_picker.attr_class', $configFormBundle['datetime_picker']['attr_class']);
         
         if($formTypes){
+            if (!class_exists('Symfony\Component\EventDispatcher\EventDispatcher')) {
+                throw new LogicException('Extensible types cannot be enabled as the EventDispatcher component is not installed. Try running "composer require symfony/event-dispatcher".');
+            }
+            
+            if (!class_exists('Symfony\Component\PropertyAccess\PropertyAccess')) {
+                throw new LogicException('ExtensibleDocument type cannot be enabled as the PropertyAccess component is not installed. Try running "composer require symfony/property-access".');
+            }
+            
             $definition = $container->getDefinition('alsatian_form.form_extension.extensible');
             $definition->setPublic(true);
             $definition->addTag('form.type_extension', array('extended_type'=>'Symfony\Component\Form\Extension\Core\Type\FormType'));
