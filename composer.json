@@ -10,12 +10,12 @@
         "symfony/form": "~2.8|~3.0|~4.0|~5.0",
         "symfony/http-kernel": "~2.8|~3.0|~4.0|~5.0",
         "symfony/options-resolver": "~2.8|~3.0|~4.0|~5.0",
+        "symfony/routing": "~2.8|~3.0|~4.0|~5.0",
         "symfony/yaml": "~2.8|~3.0|~4.0|~5.0"
     },
     "require-dev": {        
         "symfony/event-dispatcher": "~2.8|~3.0|~4.0|~5.0",
         "symfony/property-access": "~2.8|~3.0|~4.0|~5.0",
-        "symfony/routing": "~2.8|~3.0|~4.0|~5.0",
         "symfony/serializer": "~2.8|~3.0|~4.0|~5.0",
         "symfony/doctrine-bridge": "~2.8|~3.0|~4.0|~5.0",
         "doctrine/mongodb-odm-bundle": "~4.3"
