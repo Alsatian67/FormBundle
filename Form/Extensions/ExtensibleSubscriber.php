@@ -23,7 +23,7 @@ class ExtensibleSubscriber implements EventSubscriberInterface
         $this->enabledTypes = $enabledTypes;
     }
     
-    public static function getSubscribedEvents() : array
+    public static function getSubscribedEvents(): array
     {
         return array(
             FormEvents::PRE_SET_DATA => array('populateAjaxChoices',-50),
