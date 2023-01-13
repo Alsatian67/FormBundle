@@ -25,9 +25,8 @@ class AlsatianFormExtension extends Extension
         $container->setParameter('alsatian_form.parameters.extensible_entity.attr_class', $configFormBundle['extensible_entity']['attr_class']);
         
         if($configFormBundle['autocomplete']['enabled']){
-            $definition = $container->getDefinition('alsatian_form.form_type.autocomplete');
-            $definition->setPublic(true);
-            $definition->addTag('form.type');
+            $container->getDefinition('alsatian_form.form_type.autocomplete')
+                ->addTag('form.type');
         }
         
         if($configFormBundle['date_picker']['enabled']){
@@ -39,9 +38,8 @@ class AlsatianFormExtension extends Extension
 		throw new LogicException('Datepicker type cannot be enabled as ext-intl is not installed.');
 	    }
 			
-            $definition = $container->getDefinition('alsatian_form.form_type.date_picker');
-            $definition->setPublic(true);
-            $definition->addTag('form.type');
+            $container->getDefinition('alsatian_form.form_type.date_picker')
+                ->addTag('form.type');
         }
         
         if($configFormBundle['datetime_picker']['enabled']){
@@ -53,16 +51,14 @@ class AlsatianFormExtension extends Extension
 		throw new LogicException('DateTimepicker type cannot be enabled as ext-intl is not installed.');
 	    }
 			
-            $definition = $container->getDefinition('alsatian_form.form_type.datetime_picker');
-            $definition->setPublic(true);
-            $definition->addTag('form.type');
+            $container->getDefinition('alsatian_form.form_type.datetime_picker')
+                ->addTag('form.type');
         }
         
         $usedExtensibleTypes = array();
         
         if($configFormBundle['extensible_choice']['enabled']){
             $definition = $container->getDefinition('alsatian_form.form_type.extensible_choice');
-            $definition->setPublic(true);
             $definition->addTag('form.type');
             
             $usedExtensibleTypes[] = $definition->getClass();
@@ -78,7 +74,6 @@ class AlsatianFormExtension extends Extension
             }
             
             $definition = $container->getDefinition('alsatian_form.form_type.extensible_document');
-            $definition->setPublic(true);
             $definition->addTag('form.type');
             
             $usedExtensibleTypes[] = $definition->getClass();
@@ -94,7 +89,6 @@ class AlsatianFormExtension extends Extension
             }
             
             $definition = $container->getDefinition('alsatian_form.form_type.extensible_entity');
-            $definition->setPublic(true);
             $definition->addTag('form.type');
             
             $usedExtensibleTypes[] = $definition->getClass();
@@ -109,9 +103,8 @@ class AlsatianFormExtension extends Extension
                 throw new LogicException('ExtensibleDocument type cannot be enabled as the PropertyAccess component is not installed. Try running "composer require symfony/property-access".');
             }
             
-            $definition = $container->getDefinition('alsatian_form.form_extension.extensible');
-            $definition->setPublic(true);
-            $definition->addTag('form.type_extension', array('extended_type'=>'Symfony\Component\Form\Extension\Core\Type\FormType'));
+            $container->getDefinition('alsatian_form.form_extension.extensible')
+                ->addTag('form.type_extension', array('extended_type'=>'Symfony\Component\Form\Extension\Core\Type\FormType'));
         }
 	    
         $container->setParameter('alsatian_form.parameters.extensible.enabled_Types', $usedExtensibleTypes);
