@@ -4,7 +4,8 @@ This bundle provide FormTypes extending ChoiceType, EntityType and DocumentType 
 
 Ideal for [Select2](https://select2.github.io/) integration.
 
-Works with Symfony ~2.8 || ~3.0 || ~4.0 || ~5.0
+Use version 1.1 for Symfony >= 4.4
+Use version 1.0 for Symfony 2.8 to 4.3
 
 Features
 ========
@@ -26,7 +27,7 @@ The bundle provide 6 FormTypes designed to automate some common tasks :
     - **Configuration** : Insert %alsatian_form.parameters.extensible_entity.attr_class% as class for the HTML select.
     - **Options** : 'route' and 'route_params' to render a data-ajax--url tag in the HTML select.
 
-- ***ExtensibleDocumentType*** : Extension for the built-in DocumentType
+- ***ExtensibleDocumentType*** : Extension for the DoctrineMongoDBBundle DocumentType
     
     Document type which starts with an empty HTML select and accept each existing document which has be added on the client side.
     
