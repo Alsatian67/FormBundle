@@ -32,8 +32,12 @@ class AlsatianFormExtension extends Extension
         
         if($configFormBundle['date_picker']['enabled']){
             if (!class_exists('Symfony\Component\HttpFoundation\RequestStack')) {
-                throw new LogicException('DatePicker type cannot be enabled as symfony/http-foundation is not installed. Try running "composer require symfony/http-foundation.');
+                throw new LogicException('Datepicker type cannot be enabled as symfony/http-foundation is not installed. Try running "composer require symfony/http-foundation.');
             }
+		
+	    if (!extension_loaded('intl')) {
+		throw new LogicException('Datepicker type cannot be enabled as ext-intl is not installed.');
+	    }
 			
             $definition = $container->getDefinition('alsatian_form.form_type.date_picker');
             $definition->setPublic(true);
@@ -42,8 +46,12 @@ class AlsatianFormExtension extends Extension
         
         if($configFormBundle['datetime_picker']['enabled']){
             if (!class_exists('Symfony\Component\HttpFoundation\RequestStack')) {
-                throw new LogicException('DateTimePicker type cannot be enabled as symfony/http-foundation is not installed. Try running "composer require symfony/http-foundation.');
+                throw new LogicException('DateTimepicker type cannot be enabled as symfony/http-foundation is not installed. Try running "composer require symfony/http-foundation.');
             }
+		
+	    if (!extension_loaded('intl')) {
+		throw new LogicException('DateTimepicker type cannot be enabled as ext-intl is not installed.');
+	    }
 			
             $definition = $container->getDefinition('alsatian_form.form_type.datetime_picker');
             $definition->setPublic(true);
