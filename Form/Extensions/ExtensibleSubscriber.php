@@ -4,14 +4,13 @@ namespace Alsatian\FormBundle\Form\Extensions;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
+use Symfony\Component\Form\ResolvedFormTypeInterface;
+use Symfony\Component\PropertyAccess\PropertyAccess;
+use Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter;
 
 use Alsatian\FormBundle\Form\ExtensibleChoiceType;
 use Alsatian\FormBundle\Form\ExtensibleDocumentType;
 use Alsatian\FormBundle\Form\ExtensibleEntityType;
-
-use Symfony\Component\Form\ResolvedFormTypeInterface;
-use Symfony\Component\PropertyAccess\PropertyAccess;
-use Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter;
 
 class ExtensibleSubscriber implements EventSubscriberInterface
 {
