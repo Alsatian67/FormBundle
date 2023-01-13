@@ -104,7 +104,7 @@ class AlsatianFormExtension extends Extension
             }
             
             $container->getDefinition('alsatian_form.form_extension.extensible')
-                ->addTag('form.type_extension', array('extended_type'=>'Symfony\Component\Form\Extension\Core\Type\FormType'));
+                ->addTag('form.type_extension');
         }
 	    
         $container->setParameter('alsatian_form.parameters.extensible.enabled_Types', $usedExtensibleTypes);
