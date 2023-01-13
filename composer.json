@@ -13,8 +13,10 @@
         "symfony/routing": "~2.8|~3.0|~4.0|~5.0|~6.0",
         "symfony/yaml": "~2.8|~3.0|~4.0|~5.0|~6.0"
     },
-    "require-dev": {        
+    "require-dev": {
+        "ext-intl": "*",
         "symfony/event-dispatcher": "~2.8|~3.0|~4.0|~5.0|~6.0",
+        "symfony/http-foundation": "~2.8|~3.0|~4.0|~5.0|~6.0",
         "symfony/property-access": "~2.8|~3.0|~4.0|~5.0|~6.0",
         "symfony/serializer": "~2.8|~3.0|~4.0|~5.0|~6.0",
         "symfony/doctrine-bridge": "~2.8|~3.0|~4.0|~5.0|~6.0",
