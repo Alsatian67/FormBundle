@@ -21,8 +21,8 @@ class AlsatianFormExtension extends Extension
         $container->setParameter('alsatian_form.parameters.date_picker.attr_class', $configFormBundle['date_picker']['attr_class']);
         $container->setParameter('alsatian_form.parameters.datetime_picker.attr_class', $configFormBundle['datetime_picker']['attr_class']);
         $container->setParameter('alsatian_form.parameters.extensible_choice.attr_class', $configFormBundle['extensible_choice']['attr_class']);
-        $container->setParameter('alsatian_form.parameters.extensible_entity.attr_class', $configFormBundle['extensible_entity']['attr_class']);
         $container->setParameter('alsatian_form.parameters.extensible_document.attr_class', $configFormBundle['extensible_document']['attr_class']);
+        $container->setParameter('alsatian_form.parameters.extensible_entity.attr_class', $configFormBundle['extensible_entity']['attr_class']);
         
         if($configFormBundle['autocomplete']['enabled']){
             $definition = $container->getDefinition('alsatian_form.form_type.autocomplete');
