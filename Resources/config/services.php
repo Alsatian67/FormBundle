@@ -18,20 +18,17 @@ return function(ContainerConfigurator $container) {
     $container->services()
         ->set('alsatian_form.form_type.abstract_routable', AbstractRoutableType::class)
             ->abstract(true)
-            ->private()
             ->args([
                 service('router')
             ])
             
         // Extensible types :
         ->set('alsatian_form.form_extension.extensible', ExtensibleExtension::class)
-            ->private()
             ->args([
                 service('alsatian_form.form_event_subscriber.extensible')
             ])
                      
         ->set('alsatian_form.form_event_subscriber.extensible', ExtensibleSubscriber::class)
-            ->private()
             ->args([
                 param('alsatian_form.parameters.extensible.enabled_Types')
             ])
@@ -39,25 +36,21 @@ return function(ContainerConfigurator $container) {
         ->set('alsatian_form.form_type.abstract_extensible', AbstractExtensibleChoicesType::class)
             ->parent('alsatian_form.form_type.abstract_routable')
             ->abstract(true)
-            ->private()
 
         ->set('alsatian_form.form_type.extensible_choice', ExtensibleChoiceType::class)
             ->parent('alsatian_form.form_type.abstract_extensible')
-            ->private()
             ->args([
                 param('alsatian_form.parameters.extensible_choice.attr_class')
             ]
 
         ->set('alsatian_form.form_type.extensible_document', ExtensibleDocumentType::class)
             ->parent('alsatian_form.form_type.abstract_extensible')
-            ->private()
             ->args([
                 param('alsatian_form.parameters.extensible_document.attr_class')
             ]
 
         ->set('alsatian_form.form_type.extensible_entity', ExtensibleEntityType::class)
             ->parent('alsatian_form.form_type.abstract_extensible')
-            ->private()
             ->args([
                 param('alsatian_form.parameters.extensible_entity.attr_class')
             ]
