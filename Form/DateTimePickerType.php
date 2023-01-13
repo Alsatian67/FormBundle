@@ -40,10 +40,10 @@ class DateTimePickerType extends AbstractType
         });
     }
         
-    public function getParent() {
+    public function getParent(): ?string {
         return DateTimeType::class;
     }
-   public function getBlockPrefix()
+   public function getBlockPrefix(): string
    {
        return 'date_time';
    }
