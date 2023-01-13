@@ -14,8 +14,8 @@ class AlsatianFormExtension extends Extension
     {
         $configuration = new Configuration();
         $configFormBundle = $this->processConfiguration($configuration, $configs);
-        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $loader->load('services.yml');
+        $loader = new Loader\PhpFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader->load('services.php');
         
         $container->setParameter('alsatian_form.parameters.autocomplete.attr_class', $configFormBundle['autocomplete']['attr_class']);
         $container->setParameter('alsatian_form.parameters.date_picker.attr_class', $configFormBundle['date_picker']['attr_class']);
