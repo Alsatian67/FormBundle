@@ -27,7 +27,7 @@ class ExtensibleExtension extends AbstractTypeExtension
         return FormType::class;
     }
 
-    public static function getExtendedTypes(): iterable
+    public static function getExtendedTypes()
     {
         return [FormType::class];
     }
