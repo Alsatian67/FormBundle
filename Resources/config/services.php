@@ -41,37 +41,37 @@ return function(ContainerConfigurator $container) {
             ->parent('alsatian_form.form_type.abstract_extensible')
             ->args([
                 param('alsatian_form.parameters.extensible_choice.attr_class')
-            ]
+            ])
 
         ->set('alsatian_form.form_type.extensible_document', ExtensibleDocumentType::class)
             ->parent('alsatian_form.form_type.abstract_extensible')
             ->args([
                 param('alsatian_form.parameters.extensible_document.attr_class')
-            ]
+            ])
 
         ->set('alsatian_form.form_type.extensible_entity', ExtensibleEntityType::class)
             ->parent('alsatian_form.form_type.abstract_extensible')
             ->args([
                 param('alsatian_form.parameters.extensible_entity.attr_class')
-            ]
+            ])
                     
         // Other types 
         ->set('alsatian_form.form_type.autocomplete', AutocompleteType::class)
             ->parent('alsatian_form.form_type.abstract_routable')
             ->args([
                 param('alsatian_form.parameters.autocomplete.attr_class')
-            ]
+            ])
 
         ->set('alsatian_form.form_type.date_picker', DatePickerType::class)
             ->args([
                 service('request_stack'),
                 param('alsatian_form.parameters.date_picker.attr_class')
-            ]
+            ])
 
         ->set('alsatian_form.form_type.datetime_picker', DateTimePickerType::class)
             ->args([
                 service('request_stack'),
                 param('alsatian_form.parameters.datetime_picker.attr_class')
-            ]
+            ])
     ;
 };
