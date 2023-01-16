@@ -4,7 +4,7 @@ This bundle provide FormTypes extending ChoiceType, EntityType and DocumentType 
 
 Ideal for [Select2](https://select2.github.io/) integration.
 
-This branch worjs is Symfony 2.8 to 4.4
+The version 1.0 of this Bundle is for Symfony 2.8 to 4.4
 
 Features
 ========
