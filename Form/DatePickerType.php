@@ -21,7 +21,7 @@ class DatePickerType extends AbstractType
    /**
     * {@inheritdoc}
     */
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver): void
     {
         $intl = new \IntlDateFormatter($this->request_stack->getCurrentRequest()->getLocale(), \IntlDateFormatter::SHORT, \IntlDateFormatter::NONE);
 		$pattern = $intl->getPattern();
