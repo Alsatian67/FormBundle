@@ -14,7 +14,7 @@ class ExtensibleExtension extends AbstractTypeExtension
         $this->extensibleSubscriber = $extensibleSubscriber;
     }
     
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         if($builder->getForm()->isRoot())
         {
