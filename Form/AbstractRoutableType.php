@@ -17,7 +17,7 @@ abstract class AbstractRoutableType extends AbstractType
         $this->default_attr_class = $default_attr_class;
     }
     
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver): void
     {  
         $resolver->setDefaults(array('route'=>false,'route_params'=>array()));        
 
